@@ -1,109 +1,79 @@
-# E-Commerce Microservices Application
+# Cloud-Native E-Commerce Backend with AI-Based Demand Forecasting & Dynamic Pricing
 
-   **The Project is ongoing**
+## Overview
 
-A scalable **E-commerce backend system** built using **Spring Boot Microservices architecture**.  
-The application demonstrates real-world concepts like **service discovery, API gateway, inter-service communication, security, event-driven architecture, containerization, and monitoring**.
+A **cloud-native microservices-based e-commerce backend** designed to build a scalable and intelligent shopping platform.
 
-This project is implemented as a **monorepo** with a single parent (`ecommerce-parent`) managing all microservices.
+The system uses a **microservices architecture** to independently manage core functionalities such as user management, product catalog, inventory, orders, and payments.
 
----
+The key feature of this project is an **AI-powered Demand Forecasting and Dynamic Pricing module** that predicts future product demand using historical data and automatically optimizes prices based on demand trends, inventory levels, and market conditions.
 
-## Architecture Overview
-
-The system follows a distributed microservices architecture:
-
-- **API Gateway** – Single entry point for all client requests
-- **Service Discovery (Eureka Server)** – Dynamic service registration and lookup
-- **Product Service** – Manages product catalog
-- **Order Service** – Handles order creation and processing
-- **Inventory Service** – Manages stock availability
-- **Notification Service** – Sends notifications using event-driven communication
-- **Authentication** – Secured using Keycloak
-- **Messaging** – Kafka for asynchronous communication
-- **Monitoring** – Prometheus and Grafana
-- **Containerization** – Dockerized services
-
----
+The application is containerized and designed for cloud deployment to achieve scalability, reliability, and efficient resource management.
 
 
----
+## Objectives
 
-## 🔧 Technologies Used
+- Build a scalable e-commerce backend using microservices
+- Implement AI-based demand forecasting for future sales prediction
+- Develop dynamic pricing based on demand and business factors
+- Enable independent service deployment and maintenance
+- Utilize cloud-native technologies for scalability and portability
 
-- **Java 17**
-- **Spring Boot**
-- **Spring Cloud (Eureka, Gateway)**
-- **Spring Security**
-- **Keycloak**
-- **Apache Kafka**
-- **MongoDB / MySQL**
-- **Docker & Docker Compose**
-- **Prometheus & Grafana**
-- **Maven**
-- **IntelliJ IDEA**
-- **Postman**
 
----
+## System Modules
 
-## 🔗 Microservices Description
+### User Service
+- Authentication and user management
 
-### 🔹 Product Service 
-- Manages product details (name, description, price)
-- Exposes REST APIs for product operations
-- Uses MongoDB for persistence
-- finished
+### Product Service
+- Product catalog and product information management
 
-### 🔹 Inventory Service
-- Maintains stock availability
-- Communicates with Order Service
-- Ensures product quantity consistency
-- Finished
+### Inventory Service
+- Stock tracking and availability management
 
-### 🔹 Order Service
-- Handles order creation and processing
-- Communicates with Product and Inventory services
-- Publishes events to Kafka
-- Finished
+### Order Service
+- Order creation and processing
 
-### 🔹 Notification Service
-- Consumes Kafka events
-- Sends notifications on order placement
-- finished 
+### Payment Service
+- Payment handling and transaction management
 
-### 🔹 Eureka Server
-- Central service registry
-- Enables service discovery for all microservices
-- finished 
+### Demand Forecasting Service
+- Analyzes historical sales data
+- Predicts future product demand
+- Identifies sales patterns and trends
 
-### 🔹 API Gateway
-- Centralized routing and filtering
-- Single entry point for clients
-- Integrates authentication and authorization
-- finished 
+### Dynamic Pricing Service
+- Adjusts product prices based on:
+  - Predicted demand
+  - Inventory levels
+  - Sales trends
+  - Market conditions
 
----
 
-## 🔐 Security
-- Implemented using **Keycloak**
-- Role-based authentication and authorization
-- Secures APIs through API Gateway
-- finished 
+## Technology Stack
 
----
+**Backend**
+- Node.js / Spring Boot
+- REST APIs
+- Microservices Architecture
 
-## 🔄 Communication
-- **Synchronous:** Feign Client / REST calls
-- **Asynchronous:** Apache Kafka (event-driven architecture)
-- finished 
+**Database**
+- PostgreSQL / MySQL
+- MongoDB
 
----
+**AI/ML**
+- Python
+- Pandas
+- Scikit-learn
+- Time-Series Forecasting Models
 
-## 🐳 Docker Support
-All services are containerized using Docker.  
-`docker-compose.yml` is used to run the complete system with one command.
+**Cloud & DevOps**
+- Docker
+- Kubernetes
+- CI/CD Pipeline
+- Cloud Deployment
 
-```bash
-docker-compose up
-
+**Communication**
+- REST API
+- Kafka / RabbitMQ
 
